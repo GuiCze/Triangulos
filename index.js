@@ -7,11 +7,11 @@ let ent = {
   a3: "",
   tipo: "",
 };
-let rodar=true
+let rodar = true;
 while (rodar) {
-    console.log(
-        "Escolha as opções:\n1.Adiciona um tringulo\n2.Lista os tringulos \n3.Sair"
-      );
+  console.log(
+    "Escolha as opções:\n1.Adiciona um tringulo\n2.Lista os tringulos \n3.Sair"
+  );
   let tipo = prompt();
 
   switch (tipo) {
@@ -19,26 +19,25 @@ while (rodar) {
       ent.a1 = +prompt("Digite o primeiro angulo");
       ent.a2 = +prompt("Digite o segundo angulo");
       ent.a3 = +prompt("Digite o terceiro angulo");
-      if (ent.a1 + ent.a2 + ent.a3 == 180) {
+      if (
+        ent.a1 + ent.a2 + ent.a3 == 180 &&
+        ent.a1 > 0 &&
+        ent.a2 > 0 &&
+        ent.a3 > 0
+      ) {
         if (ent.a1 == ent.a2 || ent.a1 == ent.a3 || ent.a3 == ent.a2) {
           if (ent.a1 == ent.a3 && ent.a2 == ent.a3) {
             ent.tipo = "Equilatero";
-            tri.push(ent);
-            ent = {};
           } else {
             ent.tipo = "Isóceles";
-            tri.push(ent);
-            ent = {};
           }
         } else {
           ent.tipo = "Escaleno";
-          tri.push(ent);
-          ent = {};
         }
+        tri.push(ent);
+        ent = {};
       } else {
-        console.log(
-          "Os angulos digitados não correspondem a um triangulo"
-        );
+        console.log("Os angulos digitados não correspondem a um triangulo");
         ent = {};
       }
 
@@ -51,7 +50,7 @@ while (rodar) {
         console.log(tri);
       }
       break;
-    case '3':
-        rodar=false;
+    case "3":
+      rodar = false;
   }
 }
