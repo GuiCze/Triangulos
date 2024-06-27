@@ -9,9 +9,10 @@ let ent = {
 };
 let rodar=true
 while (rodar) {
-  let tipo = prompt(
-    "Escolha as opções: 1.Adiciona um tringulo 2.Lista os tringulos 3.Sair"
-  );
+    console.log(
+        "Escolha as opções:\n1.Adiciona um tringulo\n2.Lista os tringulos \n3.Sair"
+      );
+  let tipo = prompt();
 
   switch (tipo) {
     case "1":
@@ -36,7 +37,7 @@ while (rodar) {
         }
       } else {
         console.log(
-          "Os angulos digitados não correspondem a um triangulo,digite novamente"
+          "Os angulos digitados não correspondem a um triangulo"
         );
         ent = {};
       }
